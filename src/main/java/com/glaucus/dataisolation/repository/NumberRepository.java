@@ -15,5 +15,5 @@ public interface NumberRepository extends CrudRepository<NumberIncrement, Intege
 	@Query(
 			value = "SELECT * FROM numberincrement n WHERE n.id = 1 FOR UPDATE", 
 			nativeQuery = true)
-	NumberIncrement findOnePessimistic(int id);
+	NumberIncrement findOne(int id);
 }

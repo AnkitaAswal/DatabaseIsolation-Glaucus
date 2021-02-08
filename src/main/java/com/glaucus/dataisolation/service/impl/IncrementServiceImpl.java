@@ -30,7 +30,7 @@ public class IncrementServiceImpl implements IncrementService {
 	
 	@Override
 	public NumberIncrement saveIncrementCount() {
-		NumberIncrement  number=numberRepository.findOnePessimistic(1);
+		NumberIncrement  number=numberRepository.findOne(1);
 		if(number!=null) {
 			number.setCount(number.getCount()+1);
 			numberRepository.save(number);
@@ -41,6 +41,6 @@ public class IncrementServiceImpl implements IncrementService {
 	
 	@Override
 	public int getCount() {
-		return numberRepository.findOnePessimistic(1).getCount();
+		return numberRepository.findOne(1).getCount();
 	}
 }
