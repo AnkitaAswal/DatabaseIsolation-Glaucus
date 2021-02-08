@@ -27,10 +27,7 @@ public class IncrementServiceImpl implements IncrementService {
 
 	@Autowired
 	NumberRepository numberRepository;
-
-	@PersistenceContext
-	EntityManager entityManager;
-
+	
 	@Override
 	public NumberIncrement saveIncrementCount() {
 		NumberIncrement  number=numberRepository.findOnePessimistic(1);
@@ -40,5 +37,10 @@ public class IncrementServiceImpl implements IncrementService {
 		}
 
 		return number;
+	}
+	
+	@Override
+	public int getCount() {
+		return numberRepository.findOnePessimistic(1).getCount();
 	}
 }

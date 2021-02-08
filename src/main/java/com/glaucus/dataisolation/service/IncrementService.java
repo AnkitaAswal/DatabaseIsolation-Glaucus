@@ -7,5 +7,9 @@ import com.glaucus.dataisolation.model.NumberIncrement;
 @Component
 public interface IncrementService {
 
+	//increment count value by 1 in database
 	public NumberIncrement saveIncrementCount();
+
+	//get count value from database
+	public int getCount();
 }

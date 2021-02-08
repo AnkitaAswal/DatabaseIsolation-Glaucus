@@ -13,7 +13,7 @@ import com.glaucus.dataisolation.model.NumberIncrement;
 @Repository
 public interface NumberRepository extends CrudRepository<NumberIncrement, Integer> {
 	@Query(
-			value = "SELECT * FROM numberincrement u WHERE u.id = 1 FOR UPDATE", 
+			value = "SELECT * FROM numberincrement n WHERE n.id = 1 FOR UPDATE", 
 			nativeQuery = true)
 	NumberIncrement findOnePessimistic(int id);
 }
